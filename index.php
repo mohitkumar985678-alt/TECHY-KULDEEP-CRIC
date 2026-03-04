@@ -22,7 +22,7 @@ curl_setopt_array($ch, [
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_TIMEOUT => 10,
 
-    CURLOPT_PROXY => "161.123.152.56:6301",
+    CURLOPT_PROXY => "161.123.152.164:6409",
     CURLOPT_PROXYUSERPWD => "wfatxrls:9yn2hvo6e68p",
     CURLOPT_HTTPPROXYTUNNEL => true,
 
