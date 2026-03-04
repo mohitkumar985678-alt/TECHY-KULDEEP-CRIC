@@ -1,68 +1,87 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<link rel="icon" href="https://play-lh.googleusercontent.com/bp4jknyVZ8yDKhER9thIS1p9MBeU2LABqBX-sO8uaL1h5_keqlgMUmXv-CjfRWaqKw=w240-h480-rw" type="image/gif" sizes="16x16">  
+<meta charset="UTF-8">  
+<title>TECHY KULDEEP JIO HOTSTAR</title>  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>  
 
-if (empty($_GET['get'])) {
-    http_response_code(400);
-    exit("Missing get parameter");
-}
+    
 
-$path = $_GET['get'];
+<script>
+if (confirm("Join Our Telegram Channel To Watch Live Match")) {
+ window.location.href = "https://t.me/LIVE_CRICKET_56";
+  }
+</script>
+       
+<style>   
+   body {   
+             margin: 0px   
+        }   
+      
+        .jwplayer {   
+             position: absolute !important   
+        }   
+      
+        .jwplayer.jw-flag-aspect-mode {   
+             min-height: 100%;   
+             max-height: 100%   
+        }   
+  </style>  
+</head>  
+<body>  
+<div id="player"></div>
 
-$targetUrl =
-    "https://ev-fast-mpd.starzplayarabia.com/" . $path;
+<script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+<script>
+jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 
+// Patch XHR to inject token into segments
+(function() {
+    const origOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function(method, url) {
+        if (url && !url.includes("__hdnea__")) {
+            url += (url.includes('?') ? '&' : '?') + "__hdnea__=st=1772600664~exp=1772687064~acl=/*~hmac=90d9e04cace61f770bbcb853fd3368b36adeabd57aa0914c082cc26460a46b0c";
+        }
+        return origOpen.apply(this, arguments);
+    };
+})();
 
-
-
-$ch = curl_init($targetUrl);
-
-curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_TIMEOUT => 10,
-
-    CURLOPT_PROXY => "161.123.152.164:6409",
-    CURLOPT_PROXYUSERPWD => "wfatxrls:9yn2hvo6e68p",
-    CURLOPT_HTTPPROXYTUNNEL => true,
-
-    CURLOPT_HTTPHEADER => [
-        "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
-        "Accept: */*",
-        "Referer: https://ev-fast-mpd.starzplayarabia.com/",
-        "Origin: https://ev-fast-mpd.starzplayarabia.com",
-        "Host: ev-fast-mpd.starzplayarabia.com"
-                   
-    ],
-
-    CURLOPT_SSL_VERIFYPEER => false,
-    CURLOPT_SSL_VERIFYHOST => false
-]);
-
-$data = curl_exec($ch);
-
-if ($data === false) {
-    http_response_code(502);
-    echo "cURL error:\n";
-    echo curl_error($ch);
-    curl_close($ch);
-    exit;
-}
-
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-curl_close($ch);
-
-if ($httpCode !== 200) {
-    http_response_code($httpCode);
-    exit("Upstream returned HTTP $httpCode");
-}
-
-if ($contentType) {
-    header("Content-Type: $contentType");
-}
-
-echo $data;
+jwplayer("player").setup({
+    playlist: [{
+        file: "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd?__hdnea__=st=1772600664~exp=1772687064~acl=/*~hmac=90d9e04cace61f770bbcb853fd3368b36adeabd57aa0914c082cc26460a46b0c",
+        drm: {
+            clearkey: {
+                keyId: "965dc2ddb1d85138ad787999a7f30ca5",
+                key: "859695076e67fe961836b564db6d689c",
+                robustness: {
+                    video: "SW_SECURE_DECODE",
+                    audio: "SW_SECURE_DECODE"
+                }
+            }
+        }
+    }],
+    width: "100%",
+    height: "100%",
+    autostart: true,
+    mute: false,
+    primary: "html5",
+    hlshtml: true,
+    aspectratio: "16:9",
+    stretching: "exactfit",
+    playbackRateControls: true,
+    controls: true,
+     skin: { name: "default", active: "red", inactive: "white", background: "black" },
+}).on("error", e => {
+    console.error("Player error:", e);
+    const msg = document.createElement('div');
+    msg.id = "message";
+    msg.innerText = "Player error: " + (e.message || "Unknown error");
+    document.body.appendChild(msg);
+});
+</script>
 
 
 
