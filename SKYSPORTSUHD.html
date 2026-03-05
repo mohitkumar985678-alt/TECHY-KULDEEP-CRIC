@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/bp4jknyVZ8yDKhER9thIS1p9MBeU2LABqBX-sO8uaL1h5_keqlgMUmXv-CjfRWaqKw=w240-h480-rw" type="image/gif" sizes="16x16">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHY KULDEEP SKY SPORTS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/controls.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Round">
+    <style>
+        body { background: #000; margin: 0; }
+       .wrap { width: 100%; height: 100vh; }
+        video { width: 100%; height: 100%; object-fit: fill; background: #000; }
+    </style>
+</head>
+<body>
+
+<div class="wrap" data-shaka-player-container>
+    <video id="v" data-shaka-player autoplay></video>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/shaka-player.ui.min.js"></script>
+<script>
+    shaka.polyfill.installAll();
+    const v = document.getElementById('v');
+    const p = new shaka.Player();
+    p.attach(v);
+    new shaka.ui.Overlay(p, document.querySelector('.wrap'), v);
+
+    // ── CONFIG ──
+    const MPD = 'https://dice-live-oc.akamaized.net/hdntl=exp=1772603455~acl=%2f*~id=7cf911c1-e25f-43e6-92f1-8f5e412f1e14~data=hdntl,dWlkPTU1OTg4NXxkY2Uuc2t5bnomaXA9MTAzLjc1LjExLjQxJmV4cD0xNzcyNjAzNDc5JmVpZD0yOTQ5MjEmY2lkPWRjZS5za3lueiZvaWQ9MzE4JnR5cGU9TElWRQ~hmac=f5275d3b7cf427f375f9fac8bee537f705a8c83470362a6d77d52469987be229/dash/live/2093654/294921-317489/manifest-d.mpd';
+    const KID = '4d346b1d1ae64d4a800409cffa14983e';
+    const KEY = '208c972bd2da4359ac94e6944fe378b6';
+
+      function h2b(h) {
+        h = h.replace(/[\s-]/g, '');
+        const b = []; for (let i = 0; i < h.length; i += 2) b.push(parseInt(h.substr(i, 2), 16));
+        return btoa(String.fromCharCode(...b)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+    }
+
+    if (KID && KEY) p.configure({ drm: { clearKeys: { [h2b(KID)]: h2b(KEY) } } });
+
+    p.load(MPD);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
