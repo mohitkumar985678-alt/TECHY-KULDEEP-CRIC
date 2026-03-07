@@ -1,44 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JioTv</title>
-    <link rel="icon" href="https://www.jiotv.com/favicon.ico" />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #000000;
-            overflow: hidden;
-        }
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<link rel="icon" href="https://play-lh.googleusercontent.com/bp4jknyVZ8yDKhER9thIS1p9MBeU2LABqBX-sO8uaL1h5_keqlgMUmXv-CjfRWaqKw=w240-h480-rw" type="image/gif" sizes="16x16">  
+<meta charset="UTF-8">  
+<title>TECHY KULDEEP JIO HOTSTAR</title>  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>  
 
-        .jwplayer {
-            position: absolute!important;
-        }
+    
 
-        .jwplayer.jw-flag-aspect-mode {
-            min-height: 100%;
-            max-height: 100%;
-        }
-
-        #message {
-            color: #fff;
-            align-items: center;
-            z-index: 1001;
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            font-size: 24px;
-        }
-    </style>
-</head>
-<body>
+<script>
+if (confirm("Join Our Telegram Channel To Watch Live Match")) {
+ window.location.href = "https://t.me/LIVE_CRICKET_56";
+  }
+</script>
+       
+<style>   
+   body {   
+             margin: 0px   
+        }   
+      
+        .jwplayer {   
+             position: absolute !important   
+        }   
+      
+        .jwplayer.jw-flag-aspect-mode {   
+             min-height: 100%;   
+             max-height: 100%   
+        }   
+  </style>  
+</head>  
+<body>  
 <div id="player"></div>
 
 <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
@@ -50,7 +43,7 @@ jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
     const origOpen = XMLHttpRequest.prototype.open;
     XMLHttpRequest.prototype.open = function(method, url) {
         if (url && !url.includes("__hdnea__")) {
-            url += (url.includes('?') ? '&' : '?') + "__hdnea__=st=1772600664~exp=1772687064~acl=/*~hmac=90d9e04cace61f770bbcb853fd3368b36adeabd57aa0914c082cc26460a46b0c";
+            url += (url.includes('?') ? '&' : '?') + "__hdnea__=st=1772784814~exp=1772871214~acl=/*~hmac=ccb3a612b0dd357ce5f23ed188f19c7839b80d49d2801b9993bb7a06e25";
         }
         return origOpen.apply(this, arguments);
     };
@@ -58,13 +51,11 @@ jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 
 jwplayer("player").setup({
     playlist: [{
-        title: "Star Sports 1",
-        image: "https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1.png",
-        file: "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_BTS/output/index.mpd?__hdnea__=st=1772600664~exp=1772687064~acl=/*~hmac=90d9e04cace61f770bbcb853fd3368b36adeabd57aa0914c082cc26460a46b0c",
+        file: "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd?__hdnea__=st=1772784814~exp=1772871214~acl=/*~hmac=ccb3a612b0dd357ce5f23ed188f19c7839b80d49d2801b9993bb7a06e25",
         drm: {
             clearkey: {
-                keyId: "df20894ec30954d3b28097c138f4cfda",
-                key: "ff9b6292b1cddbd11a046029cb314634",
+                  keyId: "400131994b445d8c8817202248760fda",
+                key: "2d56cb6f07a75b9aff165d534ae2bfc4",
                 robustness: {
                     video: "SW_SECURE_DECODE",
                     audio: "SW_SECURE_DECODE"
@@ -79,7 +70,7 @@ jwplayer("player").setup({
     primary: "html5",
     hlshtml: true,
     aspectratio: "16:9",
-    stretching: "uniform",
+    stretching: "exactfit",
     playbackRateControls: true,
     controls: true,
      skin: { name: "default", active: "red", inactive: "white", background: "black" },
@@ -91,6 +82,3 @@ jwplayer("player").setup({
     document.body.appendChild(msg);
 });
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e15b99cd804a427f9b0db52f398ab880","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
-</html>
