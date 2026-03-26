@@ -54,8 +54,8 @@ jwplayer("player").setup({
         file: "https://jiotvmblive.cdn.jio.com/bpk-tv//Star_Sports_HD1_BTS/output/index.mpd?__hdnea__=st=1774357837~exp=1774444237~acl=/*~hmac=9a6be10189d17a2caab1fc4d93c0447bbda5dcc3688cf64c7536b847b5682c78",
         drm: {
             clearkey: {
-                  keyId: "965dc2ddb1d85138ad787999a7f30ca5",
-                key: "859695076e67fe961836b564db6d689c",
+                  keyId: "dc44fe6251825774b90d58dcfa7d94e0",
+                key: "63e3ae853f483a86752b5b9e6d61eb20",
                 robustness: {
                     video: "SW_SECURE_DECODE",
                     audio: "SW_SECURE_DECODE"
